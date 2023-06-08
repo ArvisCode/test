@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 
-import { Question } from "../Question/Question";
-import { Title, FinishButton } from "./Test.styled";
+import { Question } from '../Question/Question';
+import { Title, FinishButton } from './Test.styled';
 
-import { useTaskGetAllQuery } from "../../redux/taskApi";
+import { useTaskGetAllQuery } from '../../redux/taskApi';
 
 export const Test = () => {
   const [result, setResult] = useState([undefined]);
@@ -60,12 +60,12 @@ export const Test = () => {
       {complete === true ? (
         <Title>Ви відповіли вірно на {count}% запитань.</Title>
       ) : questions.length === result.length &&
-        [...result].every((el) => el !== undefined) ? (
+        [...result].every(el => el !== undefined) ? (
         <FinishButton type="button" name="finishButton" onClick={finish}>
           Завершити
         </FinishButton>
       ) : (
-        <Title style={{ color: "red" }}>
+        <Title style={{ color: 'red' }}>
           Надайте відповіді на всі запитання
         </Title>
       )}
